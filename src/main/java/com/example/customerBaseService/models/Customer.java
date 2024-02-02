@@ -1,18 +1,21 @@
 package com.example.customerBaseService.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Customer {
 	@Id
 	// this is the primary key
+  
 	private String email;
-	private String first_name;
-	private String last_name;
-	private String company_name;
+	@Column(name = "first_name")
+	private String firstname;
+	@Column(name = "last_name")
+	private String lastname;
+	@Column(name = "company_name")
+	private String companyname;
 	private String address;
 	private String city;
 	private String county;
@@ -20,34 +23,33 @@ public class Customer {
 	private int zip;
 	private String phone1;
 	private String phone2;
-	
 	private String web;
 	
 	public Customer() {
 	}
 
 	public String getFirst_name() {
-		return first_name;
+		return firstname;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
-	public String getCompany_name() {
-		return company_name;
+	public String getCompanyname() {
+		return companyname;
 	}
 
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
 	}
 
 	public String getAddress() {
