@@ -11,11 +11,11 @@ public class Customer {
   
 	private String email;
 	@Column(name = "first_name")
-	private String firstname;
+	private String firstName;
 	@Column(name = "last_name")
-	private String lastname;
+	private String lastName;
 	@Column(name = "company_name")
-	private String companyname;
+	private String companyName;
 	private String address;
 	private String city;
 	private String county;
@@ -29,27 +29,27 @@ public class Customer {
 	}
 
 	public String getFirst_name() {
-		return firstname;
+		return firstName;
 	}
 
 	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+		this.firstName = firstname;
 	}
 
 	public String getLastname() {
-		return lastname;
+		return lastName;
 	}
 
 	public void setLastname(String lastname) {
-		this.lastname = lastname;
+		this.lastName = lastname;
 	}
 
 	public String getCompanyname() {
-		return companyname;
+		return companyName;
 	}
 
 	public void setCompanyname(String companyname) {
-		this.companyname = companyname;
+		this.companyName = companyname;
 	}
 
 	public String getAddress() {
