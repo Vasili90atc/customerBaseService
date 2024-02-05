@@ -1,6 +1,7 @@
 package com.example.customerBaseService.models;
 
 import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -8,7 +9,6 @@ import jakarta.persistence.Id;
 public class Customer {
 	@Id
 	// this is the primary key
-  
 	private String email;
 	@Column(name = "first_name")
 	private String firstName;
@@ -122,6 +122,13 @@ public class Customer {
 
 	public void setWeb(String web) {
 		this.web = web;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", companyName="
+				+ companyName + ", address=" + address + ", city=" + city + ", county=" + county + ", state=" + state
+				+ ", zip=" + zip + ", phone1=" + phone1 + ", phone2=" + phone2 + ", web=" + web + "]";
 	}
 	
 }
