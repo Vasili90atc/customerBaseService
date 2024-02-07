@@ -2,6 +2,7 @@ package com.example.customerBaseService.restControllers;
 
 import org.springframework.beans.factory.annotation.Autowired; 
 
+
 import org.springframework.http.ResponseEntity; 
 import org.springframework.stereotype.Controller; 
 import org.springframework.web.bind.annotation.*;
@@ -26,11 +27,6 @@ public class CustomerController {
 	public ResponseEntity<Customer> getCustomer(@PathVariable String email) { 
 		return ResponseEntity.ok(customerService.findCustomerByEmail(email)); 
 	}
-	@PutMapping("/{email}") 
-	public ResponseEntity<Customer> updateCustomer(@PathVariable String email, @RequestBody Customer customer) { 
-		customer.setEmail(email); 
-		return ResponseEntity.ok(customerService.updateCustomer(customer)); 
-	} 
 	@DeleteMapping("/{email}") 
 	public ResponseEntity<Boolean> deleteCustomer(@PathVariable String email) { 
 		customerService.deleteCustomer(email); 
@@ -39,6 +35,12 @@ public class CustomerController {
 	@PostMapping("/") 
 	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
 		System.out.println(customer);
-		return ResponseEntity.ok(customerService.createNewCustomer(customer)); 
-	} 
+		return ResponseEntity.ok(customerService.createNewCustomer(customer));
+		
+	}
+	@GetMapping("/{firstName}/{lastName}") 
+	public ResponseEntity<List<Customer>> getCustomerByLastName(@PathVariable String firstName, @PathVariable String lastName) {
+		return ResponseEntity.ok(customerService.getCustomerByFirstNameOrLastName(firstName,lastName));
+		
+	}
 }

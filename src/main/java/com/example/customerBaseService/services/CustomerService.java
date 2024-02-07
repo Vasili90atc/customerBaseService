@@ -2,6 +2,7 @@ package com.example.customerBaseService.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.customerBaseService.models.Customer;
@@ -26,7 +27,7 @@ public class CustomerService {
 		return customersRepository.findAll(); 
 	} 
 	public void deleteCustomer(String email) {
-		Customer customer = customersRepository.getByEmail(email);
+		Customer customer = customersRepository.findByEmail(email);
 		customersRepository.delete(customer);
 	}
 	
@@ -36,5 +37,12 @@ public class CustomerService {
 
 	public Customer findCustomerByEmail(String email) {
 		return customersRepository.findByEmail(email);
-	} 
+	}
+	public List<Customer> getCustomerByLastName(String lastName) {
+		return customersRepository.findByLastName(lastName);
+	}
+	public List<Customer> getCustomerByFirstNameOrLastName(String firstName, String lastName) {
+		System.out.println(firstName + " " + lastName);
+		return customersRepository.findByFirstNameOrLastName(firstName,lastName);
+	}
 }

@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, String> {
 	public Customer findByEmail(String email); 
-	public List<Customer> findByEmailTrue(); 
-	public List<Customer> findByEmailFalse(); 
 	public List<Customer> findAll();
-	public Customer getByEmail(String Email);
+	public List<Customer> findByLastName(String lastName);
+	public List<Customer> findByFirstName(String firstName);
+	public List<Customer> findByFirstNameOrLastName(String firstName, String lastName);
 }
