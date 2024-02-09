@@ -126,9 +126,9 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", companyName="
-				+ companyName + ", address=" + address + ", city=" + city + ", county=" + county + ", state=" + state
-				+ ", zip=" + zip + ", phone1=" + phone1 + ", phone2=" + phone2 + ", web=" + web + "]";
+		return "Customer [email=" + email + ", " + "firstName=" + firstName + " , " + " lastName=" + " , " + lastName+ "," + 
+	" companyName=" + companyName + " , " + "address=" + address + " , " + " city=" + city + " , " + " county=" + county + " , "+ 
+	" state=" + state + " , " + "zip=" + zip + "," +  " phone1=" + phone1 + " , " + " phone2=" + phone2 + " , " + "web=" +  web + "]";
 	}
 	
 }
